@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center gap-2">
+    <button mat-flat-button color="primary" (click)="onIncrementClick()">Increment</button>
+    <button mat-flat-button color="primary" (click)="onDecrementClick()">Decrement</button>
+</div>
+<h1 class="text-center">Signal {{ doubleCounter() }}</h1>
+<div class="d-flex flex-column justify-content-center gap-1 w-100">
+    <ul>
+        @for(action of actions(); track $index){
+            <li>{{ action }}</li>
+        }
+    </ul>
+</div>
