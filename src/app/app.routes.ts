@@ -5,6 +5,6 @@ import { ImageMarkingDownloadComponent } from './image-marking-download/image-ma
 
 export const routes: Routes = [
     // {path: '', component: ImageMarkingComponent}
-    {path: '', component: RxjsComponent}
-    {path: '', component: ImageMarkingDownloadComponent}
+    {path: '', component: RxjsComponent},
+    {path: '', component: ImageMarkingDownloadComponent},
 ];
