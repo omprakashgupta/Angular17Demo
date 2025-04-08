@@ -1,0 +1,40 @@
+.shoe-details {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.image-container {
+    position: relative;
+    /* Make it a positioning context for absolute elements */
+    margin-right: 20px;
+}
+
+.numbers-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #eee;
+}
+
+.numbers-overlay button {
+    /* Style the buttons to look like numbers on the image */
+    background-color: #FFF;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    /* Needed for top and left to work */
+    border-radius: 50%;
+}
+
+.part-details {
+    flex: 1;
+}
+
+.part-details img {
+    max-width: 300px;
+    height: auto;
+}

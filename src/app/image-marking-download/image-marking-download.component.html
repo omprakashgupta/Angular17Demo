@@ -1,0 +1,11 @@
+<div #imageContainer class="image-container">
+    <img id="baseImage" src="assets/images/pdp_footbed_regular.webp" alt="Shoe Parts">
+    <div class="numbers-overlay">
+        <button *ngFor="let part of shoeParts" [style.left.px]="part.x"
+            [style.top.px]="part.y">
+            {{ part.number }}
+        </button>
+    </div>
+</div>
+
+<button (click)="downloadImage()">Download Image</button>

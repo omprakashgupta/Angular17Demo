@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-image-marking',
@@ -9,6 +9,9 @@ import { Component, HostListener } from '@angular/core';
     styleUrl: './image-marking.component.css'
 })
 export class ImageMarkingComponent {
+
+    @ViewChild('imageContainer') imageContainer!: ElementRef;
+
     selectedPart: any;
     buttonNumber: number = 0;
     shoeParts = [
