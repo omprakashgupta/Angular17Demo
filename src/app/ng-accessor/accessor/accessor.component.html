@@ -1,0 +1,6 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="customField">Custom Textbox:</label>
+    <app-accessor-child formControlName="customField"></app-accessor-child>
+
+    <button type="submit">Submit</button>
+</form>
