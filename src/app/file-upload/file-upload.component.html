@@ -1,0 +1,59 @@
+<div class="file-upload-container">
+  <h2>File Upload</h2>
+  
+  <div class="upload-area">
+    <input 
+      type="file" 
+      (change)="onFileSelected($event)" 
+      #fileInput
+      class="file-input"
+      id="fileInput"
+    />
+    <label for="fileInput" class="file-label">
+      <span class="upload-icon">📁</span>
+      <span>Choose a file</span>
+    </label>
+  </div>
+
+  <div class="file-info" *ngIf="selectedFile">
+    <p><strong>Selected File:</strong> {{ selectedFile.name }}</p>
+    <p><strong>Size:</strong> {{ selectedFile.size | number }} bytes</p>
+    <p><strong>Type:</strong> {{ selectedFile.type || 'Unknown' }}</p>
+  </div>
+
+  <div class="status-message" *ngIf="uploadStatus">
+    <p [class.error]="uploadStatus.includes('failed')" 
+       [class.success]="uploadStatus.includes('successful')">
+      {{ uploadStatus }}
+    </p>
+  </div>
+
+  <div class="progress-bar" *ngIf="isUploading">
+    <div class="progress-fill" [style.width.%]="uploadProgress">
+      {{ uploadProgress }}%
+    </div>
+  </div>
+
+  <div class="button-group">
+    <button 
+      (click)="uploadFile()" 
+      [disabled]="!selectedFile || isUploading"
+      class="btn btn-upload">
+      {{ isUploading ? 'Uploading...' : 'Upload File' }}
+    </button>
+
+    <button 
+      (click)="uploadLargeFile()" 
+      [disabled]="!selectedFile || isUploading"
+      class="btn btn-upload">
+      {{ isUploading ? 'Uploading...' : 'Upload Large File' }}
+    </button>
+    
+    <button 
+      (click)="clearFile()" 
+      [disabled]="isUploading"
+      class="btn btn-clear">
+      Clear
+    </button>
+  </div>
+</div>
