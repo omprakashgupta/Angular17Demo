@@ -6,10 +6,14 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideStore } from '@ngrx/store';
 import { counterReducer } from './ngrx/store/counter.reducer';
+import { provideHttpClient, withInterceptorsFromDi, withInterceptors } from '@angular/common/http';
+import { mockInterceptor } from './core/interceptor/mock.interceptor';
+
 
 export const appConfig: ApplicationConfig = {
     providers: [
         provideRouter(routes),
+        provideHttpClient(withInterceptors([mockInterceptor])),
         provideClientHydration(),
         provideAnimationsAsync(),
         provideStore({
