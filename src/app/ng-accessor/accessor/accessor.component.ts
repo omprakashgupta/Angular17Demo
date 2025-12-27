@@ -3,11 +3,12 @@ import { FormGroup, FormBuilder, ReactiveFormsModule, FormControl } from '@angul
 import { AccessorChildComponent } from '../accessor-child/accessor-child.component';
 import { PasswordStrengthValidator } from '../../core/directives/password-strength-validator.directive';
 import { NgIf } from '@angular/common';
+import { StarRatingComponent } from '../star-rating/star-rating.component';
 
 @Component({
   selector: 'app-accessor',
   standalone: true,
-  imports: [AccessorChildComponent, ReactiveFormsModule, PasswordStrengthValidator, NgIf],
+  imports: [AccessorChildComponent, StarRatingComponent, ReactiveFormsModule, PasswordStrengthValidator, NgIf],
   templateUrl: './accessor.component.html',
   styleUrl: './accessor.component.css'
 })
@@ -18,11 +19,12 @@ export class AccessorComponent {
       this.myForm = this.fb.group({
         customField: new FormControl(""), // Define the field
         password: new FormControl(''),
+        rating: new FormControl(0),
       });
     }
   
     onSubmit(): void {
-      console.log('Form Value:', this.myForm.controls["customField"].value);
+      console.log('Form Value:', this.myForm.value);
     }
   
 }
