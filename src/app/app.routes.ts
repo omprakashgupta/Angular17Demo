@@ -12,6 +12,6 @@ export const routes: Routes = [
     // {path: '', component: ImageMarkingDownloadComponent},
     // {path: '', component: AccessorComponent}
     // {path: '', component: MockInterceptorTestComponent}
-    // {path: '', component: AccessorComponent}
-    {path: '', component: FileUploadComponent}
+    {path: '', component: AccessorComponent}
+    // {path: '', component: FileUploadComponent}
 ];

@@ -1,6 +1,14 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <label for="customField">Custom Textbox:</label>
     <app-accessor-child formControlName="customField"></app-accessor-child>
-
+    <input type="password" formControlName="password" appPasswordStrength/>
+    <div *ngIf="myForm.get('password')?.hasError('passwordStrength') && myForm.get('password')?.touched" style="color: red;">
+        <p>Password must:</p>
+        <ul>
+            <li>Have at least 8 characters</li>
+            <li>Contain one uppercase letter</li>
+            <li>Contain one number</li>
+        </ul>
+    </div>
     <button type="submit">Submit</button>
 </form>
