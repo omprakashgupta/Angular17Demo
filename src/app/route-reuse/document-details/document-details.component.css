@@ -1,0 +1,143 @@
+.document-details-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.back-button {
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.document-content {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  background-color: #fafafa;
+}
+
+.document-header {
+  border-bottom: 2px solid #1976d2;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.document-header h1 {
+  margin: 0 0 10px 0;
+  color: #1976d2;
+  font-size: 32px;
+}
+
+.document-date {
+  color: #999;
+  font-size: 14px;
+}
+
+.document-meta {
+  background-color: #e3f2fd;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.doc-id {
+  color: #1976d2;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.document-body h2 {
+  color: #333;
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.document-body p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.content-section {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  border-left: 4px solid #4CAF50;
+}
+
+.content-section p {
+  margin-bottom: 12px;
+}
+
+.content-section p:last-child {
+  margin-bottom: 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #1976d2;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1565c0;
+}
+
+.btn-secondary {
+  background-color: #757575;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #616161;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.no-document {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+.no-document p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}

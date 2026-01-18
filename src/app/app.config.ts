@@ -1,5 +1,5 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, RouteReuseStrategy } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -8,6 +8,7 @@ import { provideStore } from '@ngrx/store';
 import { counterReducer } from './ngrx/store/counter.reducer';
 import { provideHttpClient, withInterceptorsFromDi, withInterceptors } from '@angular/common/http';
 import { mockInterceptor } from './core/interceptor/mock.interceptor';
+import { CustomReuseStrategy } from './route-reuse/CustomReuseStrategy';
 
 
 export const appConfig: ApplicationConfig = {
@@ -18,6 +19,7 @@ export const appConfig: ApplicationConfig = {
         provideAnimationsAsync(),
         provideStore({
             counter: counterReducer
-        })
+        }),
+        { provide: RouteReuseStrategy, useClass: CustomReuseStrategy }
     ]
 };

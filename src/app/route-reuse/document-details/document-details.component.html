@@ -1,0 +1,51 @@
+<div class="document-details-container">
+  <div class="back-button">
+    <button routerLink="/documents" class="back-btn">← Back to Documents</button>
+  </div>
+
+  <div *ngIf="document" class="document-content">
+    <div class="document-header">
+      <h1>{{ document.title }}</h1>
+      <span class="document-date">{{ document.date | date: 'MMMM dd, yyyy' }}</span>
+    </div>
+
+    <div class="document-meta">
+      <span class="doc-id">Document ID: {{ document.id }}</span>
+    </div>
+
+    <div class="document-body">
+      <h2>Description</h2>
+      <p>{{ document.description }}</p>
+
+      <h2>Content</h2>
+      <div class="content-section">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          <strong>Note:</strong> When you return to the documents list, the list view will be preserved (cached) thanks to CustomReuseStrategy!
+        </p>
+      </div>
+
+      <div class="action-buttons">
+        <button routerLink="/documents" class="btn btn-primary">Back to List</button>
+        <button *ngIf="documentId! > 1" [routerLink]="['/documents', documentId! - 1]" class="btn btn-secondary">
+          Previous Document
+        </button>
+        <button *ngIf="documentId! < 5" [routerLink]="['/documents', documentId! + 1]" class="btn btn-secondary">
+          Next Document
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!document" class="no-document">
+    <p>Document not found</p>
+    <button routerLink="/documents" class="btn btn-primary">Back to Documents</button>
+  </div>
+</div>

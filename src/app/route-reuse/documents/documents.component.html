@@ -1,0 +1,79 @@
+<div class="documents-container">
+  <h2>Documents List</h2>
+  <p class="info-text">
+    💾 This view is cached! Try filtering documents, navigate to a document, then return to see the filter state preserved.
+  </p>
+
+  <div class="filters-section">
+    <div class="filter-group">
+      <h3>Category Filters</h3>
+      <div class="filter-checkboxes">
+        <label class="filter-label">
+          <input 
+            type="checkbox" 
+            [checked]="isCategorySelected('Financial')"
+            (change)="toggleCategory('Financial')"
+            class="filter-checkbox">
+          <span>Financial</span>
+        </label>
+        <label class="filter-label">
+          <input 
+            type="checkbox" 
+            [checked]="isCategorySelected('Technical')"
+            (change)="toggleCategory('Technical')"
+            class="filter-checkbox">
+          <span>Technical</span>
+        </label>
+        <label class="filter-label">
+          <input 
+            type="checkbox" 
+            [checked]="isCategorySelected('Management')"
+            (change)="toggleCategory('Management')"
+            class="filter-checkbox">
+          <span>Management</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="search-group">
+      <h3>Search</h3>
+      <input 
+        type="text" 
+        placeholder="Search documents..." 
+        [value]="searchText"
+        (input)="onSearchChange($any($event).target.value)"
+        class="search-input">
+    </div>
+
+    <button (click)="clearFilters()" class="clear-btn">Clear Filters</button>
+  </div>
+
+  <div class="results-count">
+    Showing {{ documents.length }} of {{ allDocuments.length }} documents
+  </div>
+
+  <div class="documents-list" *ngIf="documents.length > 0; else noResults">
+    <div *ngFor="let doc of documents" class="document-item">
+      <div class="category-badge" [ngClass]="'cat-' + doc.category.toLowerCase()">
+        {{ doc.category }}
+      </div>
+      <div class="doc-header">
+        <h3>{{ doc.title }}</h3>
+        <span class="doc-date">{{ doc.date | date: 'MMM dd, yyyy' }}</span>
+      </div>
+      <p class="doc-description">{{ doc.description }}</p>
+      <button 
+        [routerLink]="['/documents', doc.id]"
+        class="view-btn">
+        View Details
+      </button>
+    </div>
+  </div>
+
+  <ng-template #noResults>
+    <div class="no-results">
+      <p>No documents match your filters</p>
+      <button (click)="clearFilters()" class="btn-reset">Reset Filters</button>
+    </div>
+  </ng-template>
+</div>
