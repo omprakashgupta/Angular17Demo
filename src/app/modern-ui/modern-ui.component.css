@@ -1,0 +1,143 @@
+/* Status Summary Container */
+.status-summary-container {
+    margin: 15px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.status-header i {
+    color: #3498db;
+    font-size: 20px;
+}
+
+.dashboard-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Status Cards */
+.status-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.status-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.card-header-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.card-header-section i {
+    font-size: 20px;
+}
+
+.card-header-section h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Card Colors */
+.total-card .card-header-section {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+.issues-card .card-header-section {
+    background: linear-gradient(135deg, #FF9800 0%, #fb8c00 100%);
+}
+
+.po-check-card .card-header-section {
+    background: linear-gradient(135deg, #2196F3 0%, #1976d2 100%);
+}
+
+/* Card Content */
+.card-content {
+    padding: 15px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    margin: 4px 0;
+    background: #f8f9fa;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.stat-item:hover {
+    background: #e9ecef;
+}
+
+.stat-icon {
+    margin-right: 8px;
+    color: #6c757d;
+    font-size: 14px;
+    min-width: 16px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #495057;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+    min-width: 30px;
+    text-align: right;
+}
+
+.stat-divider {
+    height: 1px;
+    background: #dee2e6;
+    margin: 8px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .status-card {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .dashboard-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

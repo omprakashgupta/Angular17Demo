@@ -7,9 +7,10 @@ import { MockInterceptorTestComponent } from './mock-interceptor-test/mock-inter
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { DocumentsComponent } from './route-reuse/documents/documents.component';
 import { DocumentDetailsComponent } from './route-reuse/document-details/document-details.component';
+import { ModernUIComponent } from './modern-ui/modern-ui.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'documents', pathMatch: 'full' },
+    { path: '', redirectTo: 'modern-ui', pathMatch: 'full' },
     // {path: '', component: RxjsComponent},
     // {path: '', component: ImageMarkingComponent}
     // {path: '', component: ImageMarkingDownloadComponent},
@@ -17,6 +18,7 @@ export const routes: Routes = [
     // {path: '', component: MockInterceptorTestComponent}
     // {path: '', component: AccessorComponent},
     // {path: '', component: FileUploadComponent}
-    {path: 'documents', component: DocumentsComponent},
-    {path: 'documents/:id', component: DocumentDetailsComponent}
+    { path: 'documents', component: DocumentsComponent },
+    { path: 'documents/:id', component: DocumentDetailsComponent },
+    { path: 'modern-ui', component: ModernUIComponent }
 ];
