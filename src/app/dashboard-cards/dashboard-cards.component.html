@@ -1,0 +1,55 @@
+<div class="box-container">
+
+  <!-- Card 1: Single section -->
+  <div class="box">
+    <div class="box-header">{{ card1.header }}</div>
+    <div class="box-body">
+      <div class="section">
+        <span class="count">{{ card1.count | number }}</span>
+        <span class="caption">{{ card1.caption }}</span>
+      </div>
+    </div>
+    <div class="box-footer">
+      <button class="box-btn">View Details</button>
+    </div>
+  </div>
+
+  <!-- Card 2: Two sections with vertical separator -->
+  <div class="box">
+    <div class="box-header">{{ card2.header }}</div>
+    <div class="box-body">
+      @for (section of card2.sections; track section.caption; let last = $last) {
+        <div class="section">
+          <span class="count">{{ section.count | number }}</span>
+          <span class="caption">{{ section.caption }}</span>
+        </div>
+        @if (!last) {
+          <div class="vertical-separator"></div>
+        }
+      }
+    </div>
+    <div class="box-footer">
+      <button class="box-btn">View Report</button>
+    </div>
+  </div>
+
+  <!-- Card 3: Three sections with vertical separators -->
+  <div class="box">
+    <div class="box-header">{{ card3.header }}</div>
+    <div class="box-body">
+      @for (section of card3.sections; track section.caption; let last = $last) {
+        <div class="section">
+          <span class="count" [style.color]="section.color">{{ section.count | number }}</span>
+          <span class="caption">{{ section.caption }}</span>
+        </div>
+        @if (!last) {
+          <div class="vertical-separator"></div>
+        }
+      }
+    </div>
+    <div class="box-footer">
+      <button class="box-btn">View All</button>
+    </div>
+  </div>
+
+</div>

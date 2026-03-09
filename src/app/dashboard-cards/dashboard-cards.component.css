@@ -1,0 +1,130 @@
+:host {
+  display: block;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.box-header {
+  padding: 16px 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: #5046e5;
+}
+
+.box-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 8px 16px;
+  gap: 8px;
+}
+
+.caption {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.count {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1;
+}
+
+.vertical-separator {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #d1d5db, transparent);
+  flex-shrink: 0;
+}
+
+.box-footer {
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.box-btn {
+  padding: 10px 28px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5046e5;
+  background: transparent;
+  border: 1.5px solid #5046e5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.box-btn:hover {
+  background: #5046e5;
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .box-container {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .count {
+    font-size: 1.6rem;
+  }
+
+  .section {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .box-body {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .vertical-separator {
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d1d5db, transparent);
+  }
+}
